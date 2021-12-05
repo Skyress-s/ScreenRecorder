@@ -4,6 +4,7 @@ from PIL import ImageGrab #pip install Pillow
 import numpy as np # gets imported with cv2
 import cv2
 from win32api import GetSystemMetrics # pip install pywin32
+import pyautogui
 
 
 from desktopmagic.screengrab_win32 import (
@@ -11,7 +12,7 @@ getDisplayRects, saveScreenToBmp, saveRectToBmp, getScreenAsImage,
 getRectAsImage, getDisplaysAsImages)
 
 
-interval = 80
+interval = 500
 
 # width = GetSystemMetrics(0)
 # height = GetSystemMetrics(1)
@@ -25,18 +26,18 @@ monitor = 1 # 0 is the first monitor, 1 is the second monitor
 rects = getDisplayRects()
 print(rects)
 
+print(rects[1][1])
+
+
 fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 # here we have to get the correct screen size or else we get an error, we there det the delta og the display rect
-captured_video = cv2.VideoWriter(file_name, fourcc, 40.0, (rects[monitor][2] - rects[monitor][0], rects[monitor][3] - rects[monitor][1]))
+captured_video = cv2.VideoWriter(file_name, fourcc, 20.0, (rects[monitor][2] - rects[monitor][0], rects[monitor][3] - rects[monitor][1]))
 while True:
     # grabs the image
     img = ImageGrab.grab(bbox=(rects[monitor][0], rects[monitor][1], rects[monitor][2], rects[monitor][3]))
-    # img = ImageGrab.grab(bbox=(2564, 360, 4470, 1436))
     img_np = np.array(img)
     img_final = cv2.cvtColor(img_np,cv2.COLOR_BGR2RGB)
 
-    #img_new = pyautogui.screenshot()
-    #img_new_np = np.array(img_new)
 
 
 
