@@ -15,6 +15,7 @@ getDisplayRects, saveScreenToBmp, saveRectToBmp, getScreenAsImage,
 getRectAsImage, getDisplaysAsImages)
 
 
+
 interval = 300
 fps = 20.0
 
