@@ -1,3 +1,5 @@
+#TODO add gui
+
 import datetime
 
 # from PIL import ImageGrab #pip install Pillow
@@ -13,6 +15,10 @@ from mss.windows import MSS as mss
 from desktopmagic.screengrab_win32 import (
 getDisplayRects, saveScreenToBmp, saveRectToBmp, getScreenAsImage,
 getRectAsImage, getDisplaysAsImages)
+
+#gui
+
+
 
 
 
