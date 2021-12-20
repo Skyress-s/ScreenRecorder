@@ -12,9 +12,6 @@ import cv2
 from mss.windows import MSS as mss
 
 
-from desktopmagic.screengrab_win32 import (
-getDisplayRects, saveScreenToBmp, saveRectToBmp, getScreenAsImage,
-getRectAsImage, getDisplaysAsImages)
 
 #gui
 
@@ -31,7 +28,7 @@ time_stamp = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
 file_name = f'{time_stamp}.mp4'
 print(time_stamp)
 
-monitor = 2 # 1 is the first monitor, 2 is the second monitor
+monitor = 1 # 1 is the first monitor, 2 is the second monitor
 
 
 #testing using mss
